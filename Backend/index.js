@@ -4,9 +4,11 @@ const userRouter = require("./routes/users.js");
 const connectToDB = require("./database/db.js");
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+const port = process.env.PORT;
 
 const app = express();
-const port = 3000;
 
 // Required Middlewares
 app.use(express.json());
