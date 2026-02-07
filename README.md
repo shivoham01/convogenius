@@ -1,5 +1,5 @@
 # ConvoGenius
-## Link - https://ashutoshshukl.com/convogenius
+## Link - https://ashutosh.pro/convogenius
 
 ## Overview
 
