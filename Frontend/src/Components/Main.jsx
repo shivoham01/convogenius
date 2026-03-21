@@ -16,8 +16,8 @@ const Main = () => {
                     <button className='loginBtn'>Log in</button>
                 </Link>
             </div>
-            <div className="image">
-                <img src={convoImage} alt="ConvoGenius" />
+            <div className='image-container'>
+                <img className="image" src={convoImage} alt="ConvoGenius" />
             </div>
         </div>
     );

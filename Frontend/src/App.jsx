@@ -10,7 +10,6 @@ import Signup from './Components/Signup';
 import Login from './Components/Login';
 // Pages
 import About from './pages/About';
-import Contact from './pages/Contact';
 import Chat from './pages/Chat';
 
 const App = () => {
@@ -26,7 +25,6 @@ const App = () => {
           <Route exact path='/login' element={<Login />} />
           {/* Pages */}
           <Route exact path='/about' element={<About />} />
-          <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/chat' element={<Chat />} />
         </Routes>
       </HashRouter>

@@ -14,9 +14,12 @@ const Navbar = () => {
     }
 
     // When link clicked
-    const closeClickedMenu = () =>{
+    const closeClickedMenu = () => {
         setIsMenuOpen(false);
     }
+
+    // Getting user token from localstorage
+    const savedToken = localStorage.getItem("token");
 
     return (
         <>
@@ -32,22 +35,22 @@ const Navbar = () => {
                         <Link to="/about">
                             <li>About Us</li>
                         </Link>
-                        <Link to="/contact">
-                            <li>Contact Us</li>
+                        <Link to={`${savedToken ? '/chat' : '/login'}`}>
+                            <li>Chat</li>
                         </Link>
                     </ul>
                 </nav>
                 <div className="socials">
                     {/* Github */}
-                    <Link to="https://github.com/theashutoshshukl" target="_blank">
+                    <Link to="https://github.com/shivoham01" target="_blank">
                         <i className="fa-brands fa-xl fa-github"></i>
                     </Link>
                     {/* Linkedin */}
-                    <Link to="https://www.linkedin.com/in/ashutoshshukl01/" target="_blank">
+                    <Link to="https://www.linkedin.com/in/ashutosh111/" target="_blank">
                         <i className="fa-brands fa-xl fa-linkedin"></i>
                     </Link>
                     {/* Web */}
-                    <Link to="https://ashutoshshukl.com/" target="_blank">
+                    <Link to="https://ashutosh.pro/" target="_blank">
                         <i className="fa-solid fa-xl fa-globe"></i>
                     </Link>
                 </div>

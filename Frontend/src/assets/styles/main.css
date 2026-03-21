@@ -8,6 +8,11 @@
     overflow: hidden;
 }
 
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+
 .main h1 {
     font-size: 50.333px;
     font-style: normal;
