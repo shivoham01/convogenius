@@ -187,7 +187,7 @@ const forgetPassword = async (req, res) => {
 
         // Signing token
         let token = jwt.sign({ email: userExists.email, id: userExists._id }, SECRET_KEY, { expiresIn: '15m' });
-        let link = `https://ashutosh.pro/convogenius/reset-password/${token}`;
+        let link = `https://ashutosh.pro/convogenius/#/reset-password/${token}`;
 
         // Set up Nodemailer transporter
         const transporter = nodemailer.createTransport({
