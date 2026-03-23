@@ -187,7 +187,7 @@ const forgetPassword = async (req, res) => {
 
         // Signing token
         let token = jwt.sign({ email: userExists.email, id: userExists._id }, SECRET_KEY, { expiresIn: '15m' });
-        let link = `http://localhost:3000/user/reset-password/${token}`;
+        let link = `https://ashutosh.pro/convogenius/reset-password/${token}`;
 
         // Set up Nodemailer transporter
         const transporter = nodemailer.createTransport({
@@ -221,7 +221,7 @@ const forgetPassword = async (req, res) => {
 
 // Reset password
 const resetPassword = async (req, res) => {
-    const { password, confirmPassword } = req.body;
+    const { password } = req.body;
     const { token } = req.params;
 
     try {
@@ -236,11 +236,6 @@ const resetPassword = async (req, res) => {
             return res.status(400).json({ message: "Invalid Link Or Expired" });
         }
 
-        // checking password and confirmPassword are same or not
-        if (password !== confirmPassword) {
-            return res.status(400).json({ message: "Password and Confirm Password must be same" });
-        }
-
         // Hashing new password
         let newHashedPassword = await bcrypt.hash(password, 10);
         if (!newHashedPassword) {
@@ -250,35 +245,11 @@ const resetPassword = async (req, res) => {
         // Updating password
         await User.updateOne({ _id: user.id }, { password: newHashedPassword });
 
-        res.status(200).json({ reseted: "Password Reseted Successfully" });
+        res.status(200).json({ message: "Password Reseted Successfully" });
 
     } catch (error) {
         return res.status(500).json({ message: "This link has been expired" });
     }
 }
 
-// Get user by id
-const getUserById = async (req, res) => {
-    const { token } = req.params;
-    try {
-        // Checking token is awailable or not
-        if (!token || token === undefined) {
-            return res.status(400).json({ message: "Unauthorized please login" });
-        }
-
-        // Decoding the user
-        const decodedToken = jwt.verify(token, SECRET_KEY);
-        if (!decodedToken) {
-            return res.status(400).json({ message: "Invalid Token" });
-        }
-
-        // Finding the user with req.userId
-        const user = await User.findOne({ _id: decodedToken.id }, { password: 0 });
-        return res.status(200).json({ user: user });
-
-    } catch (error) {
-        return res.status(500).json({ message: "Internal Server Error" });
-    }
-}
-
-module.exports = { signup, verificationEmail, login, changePassword, forgetPassword, resetPassword, getUserById }
+module.exports = { signup, verificationEmail, login, changePassword, forgetPassword, resetPassword }

@@ -22,7 +22,7 @@ const Login = () => {
       });
     }
 
-    const url = "http://localhost:3000/user/login";
+    const url = "https://convogenius-r8n7.onrender.com/user/login";
     const data = {
       email: email,
       password: password
@@ -57,7 +57,7 @@ const Login = () => {
         closeOnClick: true,
         pauseOnHover: true,
       });
-      
+
       // Saving token to localStorage
       if (responseData.token) {
         localStorage.setItem("token", responseData.token);
@@ -79,11 +79,20 @@ const Login = () => {
     }
   }
 
+  // Guest Login Button
+  const guestLoginFunc = () => {
+    setEmail('guest@gmail.com');
+    setPassword('123456');
+  }
+
   return (
     <div className="login">
       {/* Form */}
       <form className="login-form">
-        <h1 className="login-form-heading">Welcome Back</h1>
+        <div className="button-container">
+          <h1 className="login-form-heading">Welcome Back</h1>
+          <button type="button" onClick={guestLoginFunc} className="guest-login-button">Guest Login</button>
+        </div>
         {/* Email */}
         <label htmlFor="email">Your Email:</label>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} id="email" placeholder="Enter Your Email -" />

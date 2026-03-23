@@ -19,7 +19,7 @@ Follow these steps to set up ConvoGenius on your local machine:
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/theashutoshshukl/convogenius-app.git
+   git clone https://github.com/shivoham01/convogenius.git
    cd convogenius-app
    ```
 
@@ -64,6 +64,6 @@ Contributions are welcome! If you'd like to contribute to ConvoGenius.
 
 ## Contact
 
-For inquiries and support, please contact **Ashutosh shukla** at **Ashutoshshukl99@gmail.com**.
+For inquiries and support, please contact **Ashutosh shukla** at **ashutoshshukl99@gmail.com**.
 
 Happy Chatting with ConvoGenius! 🚀

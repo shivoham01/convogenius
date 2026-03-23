@@ -35,7 +35,7 @@ const Navbar = () => {
                         <Link to="/about">
                             <li>About Us</li>
                         </Link>
-                        <Link to={`${savedToken ? '/chat' : '/login'}`}>
+                        <Link to='chat'>
                             <li>Chat</li>
                         </Link>
                     </ul>
@@ -69,21 +69,21 @@ const Navbar = () => {
                 <ul>
                     <li onClick={closeClickedMenu}><Link to="/">Home</Link></li>
                     <li onClick={closeClickedMenu}><Link to="/about">About Us</Link></li>
-                    <li onClick={closeClickedMenu}><Link to="/contact">Contact Us</Link></li>
+                    <li onClick={closeClickedMenu}><Link to='/login'>Chat</Link></li>
                 </ul>
 
                 {/* Mobile Socials */}
                 <div className="mobile-socials">
                     {/* Github */}
-                    <Link onClick={closeClickedMenu} to="https://github.com/theashutoshshukl" target="_blank">
+                    <Link onClick={closeClickedMenu} to="https://github.com/shivoham01" target="_blank">
                         <i className="fa-brands fa-xl fa-github"></i>
                     </Link>
                     {/* Linkedin */}
-                    <Link onClick={closeClickedMenu} to="https://www.linkedin.com/in/ashutoshshukl01/" target="_blank">
+                    <Link onClick={closeClickedMenu} to="https://www.linkedin.com/in/ashutosh111/" target="_blank">
                         <i className="fa-brands fa-xl fa-linkedin"></i>
                     </Link>
                     {/* Web */}
-                    <Link onClick={closeClickedMenu} to="https://ashutoshshukl.com/" target="_blank">
+                    <Link onClick={closeClickedMenu} to="https://ashutosh.pro/" target="_blank">
                         <i className="fa-solid fa-xl fa-globe"></i>
                     </Link>
                 </div>

@@ -24,7 +24,7 @@ const Signup = () => {
         }
         setOtpButtonClickd(true);
 
-        const url = "http://localhost:3000/user/sent-otp";
+        const url = "https://convogenius-r8n7.onrender.com/user/sent-otp";
         const data = { email: email };
         const requestOptions = {
             method: "POST",
@@ -82,7 +82,7 @@ const Signup = () => {
             });
         }
 
-        const url = "http://localhost:3000/user/signup";
+        const url = "https://convogenius-r8n7.onrender.com/user/signup";
         const data = {
             name: name,
             email: email,

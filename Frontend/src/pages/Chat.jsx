@@ -39,7 +39,7 @@ const Chat = () => {
             });
         }
 
-        const url = "http://localhost:3000/api";
+        const url = "https://convogenius-r8n7.onrender.com/api";
         const data = {
             text: input
         }

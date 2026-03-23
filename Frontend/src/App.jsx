@@ -4,13 +4,15 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // Home and Auth
-import Main from './Components/Main';
+import Hero from  './Components/Hero';
 import Navbar from './Components/Navbar';
-import Signup from './Components/Signup';
-import Login from './Components/Login';
 // Pages
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import About from './pages/About';
 import Chat from './pages/Chat';
+import ForgetPassword from './pages/ForgetPassword';
+import ResetPassword from './pages/ResetPassword';
 
 const App = () => {
   return (
@@ -20,12 +22,14 @@ const App = () => {
         <ToastContainer />
         <Routes>
           {/* Home & Auth */}
-          <Route exact path='/' element={<Main />} />
+          <Route exact path='/' element={<Hero />} />
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='/login' element={<Login />} />
           {/* Pages */}
           <Route exact path='/about' element={<About />} />
           <Route exact path='/chat' element={<Chat />} />
+          <Route exact path='/forget-password' element={<ForgetPassword/>} />
+          <Route exact path='/reset-password/:token' element={<ResetPassword/>} />
         </Routes>
       </HashRouter>
     </>

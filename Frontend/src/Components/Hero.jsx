@@ -2,7 +2,7 @@ import '../assets/styles/main.css'
 import convoImage from "../assets/images/convogenius.png"
 import { Link } from 'react-router-dom';
 
-const Main = () => {
+const Hero = () => {
     return (
         <div className='main'>
             <h1>A Fast ChatGPT</h1>
@@ -23,4 +23,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Hero;

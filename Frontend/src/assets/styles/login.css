@@ -22,11 +22,30 @@
     width: 500px;
 }
 
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
 .login-form-heading{
     text-align: center;
-    margin: 10px;
     font-family: 'Ubuntu', sans-serif;
     color: white;
+}
+
+.guest-login-button{
+    color: white;
+    background-color: black;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.guest-login-button:active{
+    scale: 0.9;
 }
 
 .login-form label {
@@ -109,5 +128,5 @@
 
 .forget-password{
     text-align: right;
-    font-size: 12px;
+    font-size: 14px;
 }
