@@ -36,7 +36,7 @@ const Navbar = () => {
                             <li>About Us</li>
                         </Link>
                         <Link to='chat'>
-                            <li>Chat</li>
+                            <li>Chat Now</li>
                         </Link>
                     </ul>
                 </nav>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <ul>
                     <li onClick={closeClickedMenu}><Link to="/">Home</Link></li>
                     <li onClick={closeClickedMenu}><Link to="/about">About Us</Link></li>
-                    <li onClick={closeClickedMenu}><Link to='/login'>Chat</Link></li>
+                    <li onClick={closeClickedMenu}><Link to='/chat'>Chat Now</Link></li>
                 </ul>
 
                 {/* Mobile Socials */}
