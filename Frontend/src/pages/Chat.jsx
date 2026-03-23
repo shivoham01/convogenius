@@ -33,13 +33,14 @@ const Chat = () => {
         // Getting user token from localstorage
         const savedToken = localStorage.getItem("token");
         if (!savedToken) {
-            return toast.error("Unauthorized! Please login.", {
+            toast.error("Unauthorized! Please login.", {
                 position: 'top-center',
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
-            });
+            })
+            return navigate("/login")
         }
 
         // Request Object
@@ -80,7 +81,6 @@ const Chat = () => {
                 closeOnClick: true,
                 pauseOnHover: true,
             });
-            navigate('/login')
         }
     }
 
