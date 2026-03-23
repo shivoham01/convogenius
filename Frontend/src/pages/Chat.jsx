@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "../assets/styles/chat.css";
+import { useNavigate } from "react-router-dom";
+
 import Allmessages from "../Components/Allmessages";
 
 const Chat = () => {
     const [input, setInput] = useState("");
+    const navigate = useNavigate();
 
     // If there is no messages array in localStorage
     if (!localStorage.getItem("messages")) {
@@ -39,6 +42,7 @@ const Chat = () => {
             });
         }
 
+        // Request Object
         const url = "https://convogenius-r8n7.onrender.com/api";
         const data = {
             text: input
@@ -76,6 +80,7 @@ const Chat = () => {
                 closeOnClick: true,
                 pauseOnHover: true,
             });
+            navigate('/login')
         }
     }
 
